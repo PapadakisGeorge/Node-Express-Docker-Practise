@@ -1,0 +1,19 @@
+{
+  "name": "docker-node-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "../../Desktop/docker-node-js/index.js",
+  "scripts": {
+    "start": "node ../../Desktop/docker-node-js/index.js",
+    "dev": "nodemon ../../Desktop/docker-node-js/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
