@@ -1,11 +1,14 @@
 version: "3"
 services:
   node-app:
+    depends_on:
+      - mongo-db
     build: .
     ports:
       - "3000:3000"
     env_file:
       - .env
+      - .db.env
 
   mongo-db:
     image: mongo
