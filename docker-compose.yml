@@ -1,11 +1,16 @@
 version: "3"
 services:
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./ngnix/default.config:/etc/ngnix/conf.d/defaulte.conf:ro
+
   node-app:
     depends_on:
       - mongo-db
     build: .
-    ports:
-      - "3000:3000"
     env_file:
       - .env
 

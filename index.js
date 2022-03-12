@@ -13,6 +13,7 @@ const {
 } = require('./config/config');
 const postRouter = require('./routes/postRoutes');
 const userRouter = require('./routes/userRoutes');
+const cors = require("cors");
 
 const kickOff = async () => {
     let RedisStore = require('connect-redis')(session);
@@ -35,6 +36,9 @@ const kickOff = async () => {
     };
 
     connectWithRetry();
+
+    app.enable('trust proxy');
+    app.use(cors());
 
     app.use(session({
             store: new RedisStore({
